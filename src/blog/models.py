@@ -11,7 +11,15 @@ class Category(models.Model):
 
 
 class ArticleManager(models.Manager):
-    pass
+
+    def get_published(self, search=None):
+        qry = self.filter(publication_date__lte=date.today())
+        if search:
+            qry = qry.filter(title__icontains=search)
+        return qry.order_by('-publication_date')
+
+    def get_random(self, limit=4):
+        return self.get_published().order_by('?')[:limit]
 
 
 class Article(models.Model):
