@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Blog</title>
+    <base href="/">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,76 +13,39 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
 </head>
 <body>
-    <div class="row">
+    <div class="row" ng-app="blog">
         <div class="col-md-3">
         </div>
         <div class="col-md-6">
             {% verbatim %}
-            <h1>Blog</h1>
-            <h4>Thursday, September 9, 2016 | Author</h4>
-            <img src="" height="300px" width="100%">
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <div class="row article-wrapper">
-                <div class="col-md-1">
-                    <h1>1</h1>
-                </div>
-                <div class="col-md-11">
-                    <h2>Article 1</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    </p>
-                    <a href="#">Detail</a>
-                </div>
+            <ng-view></ng-view>
 
-
-                <div class="col-md-1">
-                    <h1>2</h1>
+            <br>
+            <hr>
+            <div class="section-separator">
+                <h4>What to read Next</h4>
+            </div>
+            <hr>
+            <div class="row read-next">
+                <div class="col-md-3">
+                    <img src="" height="150px" width="100%">
+                    <h4>Article 1</h4>
                 </div>
-                <div class="col-md-11">
-                    <h2>Article 2</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    </p>
-                    <a href="#">Detail</a>
+                <div class="col-md-3">
+                    <img src="" height="150px" width="100%">
+                    <h4>Article 2</h4>
+               </div>
+                <div class="col-md-3">
+                    <img src="" height="150px" width="100%">
+                    <h4>Article 3</h4>
                 </div>
-
-                <div class="col-md-1">
-                    <h1>3</h1>
-                </div>
-                <div class="col-md-11">
-                    <h2>Article 3</h2>
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                    </p>
-                    <a href="#">Detail</a>
-                </div>
-                <br>
-                <hr>
-                <div class="section-separator">
-                    <h4>What to read Next</h4>
-                </div>
-                <hr>
-                <div class="row read-next">
-                    <div class="col-md-3">
-                        <img src="" height="150px" width="100%">
-                        <h4>Article 1</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" height="150px" width="100%">
-                        <h4>Article 2</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" height="150px" width="100%">
-                        <h4>Article 3</h4>
-                    </div>
-                    <div class="col-md-3">
-                        <img src="" height="150px" width="100%">
-                        <h4>Article 4</h4>
-                    </div>
+                <div class="col-md-3">
+                    <img src="" height="150px" width="100%">
+                    <h4>Article 4</h4>
                 </div>
             </div>
+
+
             {% endverbatim %}
         </div>
         <div class="col-md-3">
@@ -89,9 +53,15 @@
     </div>
 
     <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
+
+    <script src='{% static "js/ng/blog.module.js" %}'></script>
+    <script src='{% static "js/ng/blog.service.js" %}'></script>
+    <script src='{% static "js/ng/routes.js" %}'></script>
+    <script src='{% static "js/ng/blog.controller.js" %}'></script>
 
 </body>
 </html>

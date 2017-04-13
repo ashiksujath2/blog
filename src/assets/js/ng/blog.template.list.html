@@ -1,0 +1,21 @@
+<h1>{{$ctrl.preview.title}}</h1>
+<h4>{{$ctrl.preview.publication_date}} | Author</h4>
+<img src="" height="300px" width="100%">
+<p>
+    {{$ctrl.preview.body_text}}
+</p>
+<div class="row article-wrapper">
+
+    <div ng-repeat="article in $ctrl.articles">
+        <div class="col-md-1">
+            <h1>{{$index+1}}</h1>
+        </div>
+        <div class="col-md-11">
+            <h2>{{article.title}}</h2>
+            <p>
+                {{article.body_text}}
+            </p>
+            <a href="#">Detail</a>
+        </div>
+    </div>
+</div>
