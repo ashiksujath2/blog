@@ -19,10 +19,21 @@
                 }
             }
         )
+        .when('/article/:id', {
+            templateUrl: blogConfig.staticUrl + "js/ng/blog.template.detail.html",
+            controller: "BlogDetailController",
+            controllerAs: "$ctrl",
+            resolve: {
+                data: function(blogServices, $route) {
+                    return blogServices.getBlogDetail($route.current.params.id).then(function(response) {
+                        return response.data;
+                    });
+                }
+            }
+        })
         .otherwise({
             redirectTo: '/'
         });
-        $locationProvider.html5Mode(true);
     }
 
 

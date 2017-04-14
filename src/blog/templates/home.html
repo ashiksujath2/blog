@@ -4,7 +4,6 @@
 <html>
 <head>
     <title>Blog</title>
-    <base href="/">
 
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -22,28 +21,7 @@
 
             <br>
             <hr>
-            <div class="section-separator">
-                <h4>What to read Next</h4>
-            </div>
-            <hr>
-            <div class="row read-next">
-                <div class="col-md-3">
-                    <img src="" height="150px" width="100%">
-                    <h4>Article 1</h4>
-                </div>
-                <div class="col-md-3">
-                    <img src="" height="150px" width="100%">
-                    <h4>Article 2</h4>
-               </div>
-                <div class="col-md-3">
-                    <img src="" height="150px" width="100%">
-                    <h4>Article 3</h4>
-                </div>
-                <div class="col-md-3">
-                    <img src="" height="150px" width="100%">
-                    <h4>Article 4</h4>
-                </div>
-            </div>
+            <read-next></read-next>
 
 
             {% endverbatim %}
@@ -62,6 +40,7 @@
     <script src='{% static "js/ng/blog.service.js" %}'></script>
     <script src='{% static "js/ng/routes.js" %}'></script>
     <script src='{% static "js/ng/blog.controller.js" %}'></script>
+    <script src='{% static "js/ng/blog.components.js" %}'></script>
 
 </body>
 </html>

@@ -11,6 +11,11 @@
             return $http.get(url);
         };
 
+        obj.getBlogDetail = function(id) {
+            var url = blogConfig.blogDetailUrl+id;
+            return $http.get(url);
+        };
+
         return obj;
     }
 

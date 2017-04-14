@@ -2,6 +2,7 @@
     angular.module('blog', ['ngRoute'])
     .constant("blogConfig", {
         "staticUrl": '/static/',
-        "blogListUrl": '/api/articles'
+        "blogListUrl": '/api/articles',
+        "blogDetailUrl": '/api/article/'
     });
 })();
