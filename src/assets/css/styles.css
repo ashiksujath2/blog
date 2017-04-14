@@ -1,0 +1,53 @@
+.nav-container {
+    position: relative;
+}
+#nav-bar {
+    width: 25%;
+    position: absolute;
+    top: 100px;
+    right: 0px;
+    border: 1px solid #999;
+}
+
+#nav-bar .home {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 36px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#nav-bar button {
+    text-decoration: none;
+    width: 50%;
+    text-align: center;
+    height: 30px;
+    float: left;
+}
+
+#nav-bar ul {
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+#nav-bar ul li {
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.numCircle {
+    border-radius: 50%;
+    margin-top: 50px;
+    width: 36px;
+    height: 36px;
+    padding: 4px;
+    font-size: 18px;
+    background: #fff;
+    border: 2px solid #999;
+    color: #999;
+    text-align: center;
+}
