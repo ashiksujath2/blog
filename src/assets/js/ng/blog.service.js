@@ -16,6 +16,11 @@
             return $http.get(url);
         };
 
+        obj.getRandomArticles = function() {
+            var url = blogConfig.blogRandomListUrl;
+            return $http.get(url);
+        };
+
         return obj;
     }
 

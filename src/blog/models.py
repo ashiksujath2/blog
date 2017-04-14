@@ -18,7 +18,7 @@ class ArticleManager(models.Manager):
             qry = qry.filter(title__icontains=search)
         return qry.order_by('-publication_date')
 
-    def get_random(self, limit=4):
+    def get_random(self, limit=100):
         return self.get_published().order_by('?')[:limit]
 
 
