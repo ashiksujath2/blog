@@ -7,7 +7,7 @@
     BlogListController.$inject = ['data'];
     function BlogListController(data) {
         var self = this;
-        self.articles = data.results;
+        self.articles = data.results.slice(1);
         self.preview = data.results[0];
     }
 

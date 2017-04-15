@@ -1,8 +1,11 @@
-<h1>{{$ctrl.preview.title}}</h1>
+<h1> <a ng-href="#!/article/{{$ctrl.preview.id}}">{{$ctrl.preview.title}}</a> </h1>
 <h4>{{$ctrl.preview.publication_date}} | Author</h4>
-<img src="" height="300px" width="100%">
+<img src="{{$ctrl.preview.hero_img}}" width="100%">
+<br>
+<br>
 <p>
-    {{$ctrl.preview.body_text}}
+    {{$ctrl.preview.body_text | limitTo: 600}}
+    {{$ctrl.preview.body_text.length > 600 ? '&hellip;' : ''}}
 </p>
 <div class="row article-wrapper">
 
@@ -13,9 +16,11 @@
         <div class="col-md-11">
             <h2>{{article.title}}</h2>
             <p>
-                {{article.body_text}}
+                {{article.body_text | limitTo: 300}}
+                {{$ctrl.preview.body_text.length > 300 ? '&hellip;' : ''}}
             </p>
             <a ng-href="#!/article/{{article.id}}">Detail</a>
         </div>
     </div>
 </div>
+

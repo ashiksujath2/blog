@@ -1,12 +1,17 @@
 <div class="section-separator">
-    <h4>What to read Next</h4>
-    <a ng-click="$ctrl.onPrev()">&lt;</a>
-    <a ng-click="$ctrl.onNext()">&gt;</a>
+    <span>What to read Next</span>
+    <a class="button glyphicon glyphicon-chevron-right" ng-click="$ctrl.onNext()"></a>
+    <a class="button glyphicon glyphicon-chevron-left" ng-click="$ctrl.onPrev()"></a>
+    <span class="clearfix"></span>
 </div>
-<hr>
+<br>
 <div class="row read-next">
     <div class="col-md-3" ng-repeat="article in $ctrl.dispArticles">
-        <img src="" height="150px" width="100%">
-        <h4>{{article.title}}</h4>
+        <a ng-href="#!/article/{{article.id}}">
+            <img src="{{article.hero_img}}" height="150px" width="100%">
+        </a>
+        <a ng-href="#!/article/{{article.id}}">
+            <h4>{{article.title}}</h4>
+        </a>
     </div>
 </div>

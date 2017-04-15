@@ -1,6 +1,10 @@
 <h1>{{$ctrl.article.title}}</h1>
-<h4>{{$ctrl.article.publication_date}} | {{$ctrl.article.author}}</h4>
-<img src="{{$ctrl.article.hero_img}}" height="300px" width="100%">
+<h4>{{$ctrl.article.publication_date}}
+    {{$ctrl.article.author ? '| ' + $ctrl.article.author : '' }}</h4>
+<br>
+<img src="{{$ctrl.article.hero_img}}" width="100%">
+<br>
+<br>
 <p>
     {{$ctrl.article.body_text}}
 </p>

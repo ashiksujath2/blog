@@ -4,6 +4,7 @@ from blog.models import Article
 
 class ArticleSerializer(serializers.ModelSerializer):
     author = serializers.SerializerMethodField()
+    publication_date = serializers.DateTimeField(format='%A, %B %d, %Y')
     category = serializers.SlugRelatedField(
         read_only=True,
         slug_field='name')
@@ -21,12 +22,10 @@ class ArticleSerializer(serializers.ModelSerializer):
 class ArticleListSerializer(ArticleSerializer):
 
     class Meta(ArticleSerializer.Meta):
-        fields = ('id', 'title', 'body_text', 'publication_date')
+        fields = ('id', 'title', 'body_text', 'hero_img', 'publication_date')
 
 
 class RandomArticleListSerializer(ArticleSerializer):
 
     class Meta(ArticleSerializer.Meta):
         fields = ('id', 'title', 'hero_img')
-
-
