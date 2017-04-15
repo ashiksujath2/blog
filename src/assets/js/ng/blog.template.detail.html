@@ -5,6 +5,14 @@
 <img ng-src="{{$ctrl.article.hero_img}}" width="100%">
 <br>
 <br>
-<p>
-    {{$ctrl.article.body_text}}
-</p>
+<div class="row" ng-if="$ctrl.article.image">
+    <div class="col-md-8">
+        <p>{{$ctrl.article.body_text}}</p>
+    </div>
+    <div class="col-md-4">
+        <img ng-src="{{$ctrl.article.image}}" width="100%">
+    </div>
+</div>
+<div ng-if="!$ctrl.article.image">
+    <p>{{$ctrl.article.body_text}}</p>
+</div>

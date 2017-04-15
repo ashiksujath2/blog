@@ -28,8 +28,9 @@
             self.articles = data.results;
             self.preview = false;
         } else {
+            var random = Math.floor(Math.random()*data.results.length);
             self.articles = data.results.slice(1);
-            self.preview = data.results[0];
+            self.preview = data.results[random];
         }
     }
 

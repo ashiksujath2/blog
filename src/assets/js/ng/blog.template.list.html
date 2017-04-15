@@ -1,6 +1,7 @@
 <div ng-if="$ctrl.preview">
     <h1> <a ng-href="#!/article/{{$ctrl.preview.id}}">{{$ctrl.preview.title}}</a> </h1>
-    <h4>{{$ctrl.preview.publication_date}} | Author</h4>
+    <h4>{{$ctrl.preview.publication_date}}
+    {{$ctrl.article.author ? '| ' + $ctrl.article.author : '' }}</h4>
     <img ng-src="{{$ctrl.preview.hero_img}}" width="100%">
     <br>
     <br>
