@@ -1,14 +1,36 @@
 (function() {
     angular.module('blog')
+    .controller('BlogController', BlogController)
     .controller('BlogListController', BlogListController)
     .controller('BlogDetailController', BlogDetailController)
     .controller('ReadComponentController', ReadComponentController);
 
-    BlogListController.$inject = ['data'];
-    function BlogListController(data) {
+    BlogController.$inject = ['$location'];
+    function BlogController($location) {
         var self = this;
-        self.articles = data.results.slice(1);
-        self.preview = data.results[0];
+        self.showSearchBox = false;
+        self.query = "";
+        self.search = function() {
+            self.showSearchBox = false;
+            return $location.path('/').search('q', self.query);
+        };
+        self.toggleSearch = function() {
+            self.query = "";
+            self.showSearchBox = !self.showSearchBox;
+        };
+    }
+
+    BlogListController.$inject = ['data', '$routeParams'];
+    function BlogListController(data, $routeParams) {
+        var self = this;
+        self.search = $routeParams.q;
+        if (self.search) {
+            self.articles = data.results;
+            self.preview = false;
+        } else {
+            self.articles = data.results.slice(1);
+            self.preview = data.results[0];
+        }
     }
 
     BlogDetailController.$inject = ['data'];

@@ -1,6 +1,12 @@
 .nav-container {
     position: relative;
 }
+
+.content-wrapper {
+    min-height: 500px;
+    margin-bottom: 20px;
+}
+
 #nav-bar {
     width: 25%;
     position: absolute;
@@ -68,4 +74,14 @@
     padding: 12px 0px 0px;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+#searchbox {
+    box-shadow: 3px 3px 5px #333;
+    width: 40%;
+    position: absolute;
+    top: 200px;
+    left: 30%;
+    z-index: 10;
 }

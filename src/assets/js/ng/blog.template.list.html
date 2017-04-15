@@ -1,19 +1,24 @@
-<h1> <a ng-href="#!/article/{{$ctrl.preview.id}}">{{$ctrl.preview.title}}</a> </h1>
-<h4>{{$ctrl.preview.publication_date}} | Author</h4>
-<img src="{{$ctrl.preview.hero_img}}" width="100%">
-<br>
-<br>
-<p>
-    {{$ctrl.preview.body_text | limitTo: 600}}
-    {{$ctrl.preview.body_text.length > 600 ? '&hellip;' : ''}}
-</p>
+<div ng-if="$ctrl.preview">
+    <h1> <a ng-href="#!/article/{{$ctrl.preview.id}}">{{$ctrl.preview.title}}</a> </h1>
+    <h4>{{$ctrl.preview.publication_date}} | Author</h4>
+    <img ng-src="{{$ctrl.preview.hero_img}}" width="100%">
+    <br>
+    <br>
+    <p>
+        {{$ctrl.preview.body_text | limitTo: 600}}
+        {{$ctrl.preview.body_text.length > 600 ? '&hellip;' : ''}}
+    </p>
+</div>
+<div ng-show="$ctrl.search">
+    <h3>Search results for '{{$ctrl.search}}'</h3>
+</div>
 <div class="row article-wrapper">
 
     <div ng-repeat="article in $ctrl.articles">
-        <div class="col-md-1">
+        <div class="col-xs-1">
             <div class="numCircle">{{$index+1}}</div>
         </div>
-        <div class="col-md-11">
+        <div class="col-xs-11">
             <h2>{{article.title}}</h2>
             <p>
                 {{article.body_text | limitTo: 300}}

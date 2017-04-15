@@ -10,5 +10,8 @@
         templateUrl: ['blogConfig', function(blogConfig) {
             return blogConfig.staticUrl + "js/ng/blog.template.navbar.html";
         }],
+        bindings: {
+            toggleSearch: '&'
+        }
     });
 })();

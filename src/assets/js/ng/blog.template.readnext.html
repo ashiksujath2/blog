@@ -6,9 +6,9 @@
 </div>
 <br>
 <div class="row read-next">
-    <div class="col-md-3" ng-repeat="article in $ctrl.dispArticles">
+    <div class="col-md-3 col-xs-3" ng-repeat="article in $ctrl.dispArticles">
         <a ng-href="#!/article/{{article.id}}">
-            <img src="{{article.hero_img}}" height="150px" width="100%">
+            <img ng-src="{{article.hero_img}}" height="100px" width="100%">
         </a>
         <a ng-href="#!/article/{{article.id}}">
             <h4>{{article.title}}</h4>

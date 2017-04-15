@@ -11,8 +11,8 @@
                 controller: "BlogListController",
                 controllerAs: "$ctrl",
                 resolve: {
-                    data: function(blogServices) {
-                        return blogServices.getBlogList().then(function(response) {
+                    data: function(blogServices, $route) {
+                        return blogServices.getBlogList($route.current.params.q).then(function(response) {
                             return response.data;
                         });
                     }
