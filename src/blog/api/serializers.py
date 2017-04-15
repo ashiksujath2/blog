@@ -22,7 +22,7 @@ class ArticleSerializer(serializers.ModelSerializer):
 class ArticleListSerializer(ArticleSerializer):
 
     class Meta(ArticleSerializer.Meta):
-        fields = ('id', 'title', 'body_text', 'hero_img', 'publication_date')
+        fields = ('id', 'title', 'author', 'body_text', 'hero_img', 'publication_date')
 
 
 class RandomArticleListSerializer(ArticleSerializer):
