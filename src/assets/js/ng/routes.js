@@ -5,17 +5,17 @@
     RouteConfig.$inject = ['$routeProvider', '$locationProvider', 'blogConfig'];
     function RouteConfig($routeProvider, $locationProvider, blogConfig) {
         $routeProvider
-        .when('/',
-            {
+        .when('/', {
                 templateUrl: blogConfig.staticUrl + "js/ng/blog.template.list.html",
                 controller: "BlogListController",
                 controllerAs: "$ctrl",
                 resolve: {
-                    data: function(blogServices, $route) {
+                    data: ['blogServices', '$route', function(blogServices, $route) {
                         return blogServices.getBlogList($route.current.params.q).then(function(response) {
-                            return response.data;
-                        });
-                    }
+                                return response.data;
+                            }
+                        );
+                    }]
                 }
             }
         )
@@ -24,11 +24,12 @@
             controller: "BlogDetailController",
             controllerAs: "$ctrl",
             resolve: {
-                data: function(blogServices, $route) {
+                data: ['blogServices', '$route', function(blogServices, $route) {
                     return blogServices.getBlogDetail($route.current.params.id).then(function(response) {
-                        return response.data;
-                    });
-                }
+                            return response.data;
+                        }
+                    );
+                }]
             }
         })
         .otherwise({

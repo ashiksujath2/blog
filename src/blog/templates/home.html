@@ -38,19 +38,21 @@
         </div>
     </div>
     {% endverbatim %}
-
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.js"></script>
 
-    <script src='{% static "js/ng/blog.module.js" %}'></script>
-    <script src='{% static "js/ng/blog.service.js" %}'></script>
-    <script src='{% static "js/ng/routes.js" %}'></script>
-    <script src='{% static "js/ng/blog.controller.js" %}'></script>
-    <script src='{% static "js/ng/blog.components.js" %}'></script>
-
+    {% if debug %}
+        <script src='{% static "js/ng/blog.module.js" %}'></script>
+        <script src='{% static "js/ng/blog.service.js" %}'></script>
+        <script src='{% static "js/ng/routes.js" %}'></script>
+        <script src='{% static "js/ng/blog.controller.js" %}'></script>
+        <script src='{% static "js/ng/blog.components.js" %}'></script>
+    {% else %}
+        <script src='{% static "dist/blog.min.js" %}'></script>
+    {% endif %}
 </body>
 </html>
 

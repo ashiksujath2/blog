@@ -3,3 +3,4 @@ db.sqlite3
 *.pyc
 src/static/*
 src/media/*
+src/assets/node_modules/*
